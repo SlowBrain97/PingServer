@@ -1,4 +1,4 @@
-name = "ping-cron"
+name = "pingserver2"
 main = "main.js"
 compatibility_date = "2025-12-16"
 
