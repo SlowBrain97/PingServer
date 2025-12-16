@@ -8,12 +8,14 @@ const urls = [
 "https://download-convert-web-app.onrender.com/ping"
 ]
 async function ping(){
-    urls.forEach(async url => {
-        try {
-            await fetch(url,{method:"GET"});
-            console.log(`[${new Date().toISOString()}] - Pinged ${url}`);
-        } catch (error) {
-            console.log(`[${new Date().toISOString()}] - Failed to ping ${url}`);
-        }
-    })
+    await Promise.all(
+        urls.map(async (url) => {
+            try {
+                const res = await fetch(url, { method: "GET" });
+                console.log(`[${new Date().toISOString()}] - Pinged ${url} (${res.status})`);
+            } catch (error) {
+                console.log(`[${new Date().toISOString()}] - Failed to ping ${url}`, error);
+            }
+        })
+    );
 }
