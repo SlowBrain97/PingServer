@@ -5,7 +5,8 @@ export default{
 }
 const urls = [
     "https://tech-skill-webapp.onrender.com",
-"https://download-convert-web-app.onrender.com/ping"
+"https://download-convert-web-app.onrender.com/ping",
+    "https://e-commerce-tpra.onrender.com"
 ]
 async function ping(){
     await Promise.all(
